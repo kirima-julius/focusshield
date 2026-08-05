@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation — FocusShield Platform & Extension</title>
+    <meta name="description" content="Official documentation, installation guides, and technical architecture for FocusShield.">
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Marked.js Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        /* STYLED MARKDOWN RENDERER STYLES */
+        .markdown-body {
+            color: var(--color-text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        .markdown-body h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #FFF;
+            margin-top: 0;
+            margin-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 12px;
+        }
+        .markdown-body h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #FFF;
+            margin-top: 32px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 8px;
+        }
+        .markdown-body h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-top: 24px;
+            margin-bottom: 10px;
+        }
+        .markdown-body h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #FFF;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+        .markdown-body p {
+            color: var(--color-text-muted);
+            margin-bottom: 16px;
+        }
+        .markdown-body blockquote {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid var(--color-primary);
+            margin: 16px 0;
+            padding: 12px 20px;
+            border-radius: 0 8px 8px 0;
+            color: #E2E8F0;
+        }
+        .markdown-body code {
+            background: rgba(255, 255, 255, 0.08);
+            color: #38BDF8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+        .markdown-body pre {
+            background: #0B0F19;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+        .markdown-body pre code {
+            background: transparent;
+            padding: 0;
+            color: #F8FAFC;
+        }
+        .markdown-body ul, .markdown-body ol {
+            color: var(--color-text-muted);
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .markdown-body li {
+            margin-bottom: 6px;
+        }
+        .markdown-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .markdown-body th {
+            background: rgba(59, 130, 246, 0.2);
+            color: #FFF;
+            font-weight: 700;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+        .markdown-body td {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--color-text-muted);
+        }
+        .markdown-body img {
+            max-width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 16px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .markdown-body hr {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 32px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/icons/logo.png" alt="FocusShield Logo" class="logo-image">
+                <span class="logo-text">FocusShield</span>
+            </a>
+            <nav class="navigation">
+                <ul class="navigation-list">
+                    <li><a href="index.html" class="navigation-link">Home</a></li>
+                    <li><a href="about.html" class="navigation-link">About</a></li>
+                    <li><a href="docs.html" class="navigation-link active">Documentation</a></li>
+                    <li><a href="index.html#features" class="navigation-link">Features</a></li>
+                    <li><a href="index.html#how-it-works" class="navigation-link">How it Works</a></li>
+                    <li><a href="index.html#pricing" class="navigation-link">Pricing</a></li>
+                    <li><a href="index.html#faq" class="navigation-link">FAQ</a></li>
+                    <li><a href="dashboard.html" class="navigation-link">Dashboard</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="downloads/FocusShield-Extension.zip" download="FocusShield-Extension.zip" id="download-extension-btn" class="button button-primary">
+                    Download Extension
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="docs-wrapper" style="padding-top: 120px; padding-bottom: 80px;">
+        <div class="container" style="max-width: 960px;">
+            
+            <div style="background: rgba(18, 26, 43, 0.75); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px; padding: 40px; backdrop-filter: blur(16px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);">
+                <div id="loading-doc" style="text-align: center; padding: 40px; color: var(--color-primary);">
+                    <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 32px; margin-bottom: 12px;"></i>
+                    <p style="color: var(--color-text-muted);">Loading and styling FocusShield README documentation...</p>
+                </div>
+                
+                <div id="readme-content" class="markdown-body" style="display: none;"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p>© 2026 FocusShield. Authored by Julius Kirima. All rights reserved.</p>
+                <a href="README.md" target="_blank" style="color: var(--color-primary); text-decoration: none;"><i class="fa-solid fa-file-lines"></i> View Raw README.md</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("README.md")
+                .then(response => {
+                    if (!response.ok) throw new Error("Failed to load README.md");
+                    return response.text();
+                })
+                .then(markdownText => {
+                    const contentDiv = document.getElementById("readme-content");
+                    const loadingDiv = document.getElementById("loading-doc");
+                    
+                    // Render markdown using Marked parser
+                    contentDiv.innerHTML = marked.parse(markdownText);
+                    
+                    loadingDiv.style.display = "none";
+                    contentDiv.style.display = "block";
+                })
+                .catch(err => {
+                    console.error("Documentation loading error:", err);
+                    document.getElementById("loading-doc").innerHTML = '<p style="color:#EF4444;">Error loading documentation. Please ensure README.md exists.</p>';
+                });
+        });
+    </script>
+
+</body>
+</html>
