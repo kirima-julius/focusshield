@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- META DATA -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- TITLE -->
+
+    <title>Access Blocked | FocusShield</title>
+
+    <!-- FONTS & ICONS -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- STYLES -->
+
+    <link rel="stylesheet"
+          href="extension.css">
+
+    <!-- JAVASCRIPT (UNTOUCHED) -->
+
+    <script type="module"
+            src="blocked.js"
+            defer></script>
+
+</head>
+
+<body class="blocked-page-body">
+
+    <main class="blocked-viewport">
+
+        <!-- MAIN CENTERED GLASS CARD -->
+
+        <div class="blocked-main-card">
+
+            <!-- LOGO & HERO HEADER -->
+
+            <div class="blocked-hero">
+
+                <div class="blocked-logo-ring">
+
+                    <img src="icons/icon128.png"
+                         alt="FocusShield Logo"
+                         class="blocked-logo">
+
+                </div>
+
+                <h1 class="blocked-main-title">
+
+                    <i class="fa-solid fa-shield-halved"></i> Access Blocked
+
+                </h1>
+
+                <p class="blocked-subtitle">
+
+                    This website is restricted during your active focus session to help you stay productive.
+
+                </p>
+
+            </div>
+
+            <!-- WEBSITE INFO SUB-CARD -->
+
+            <div class="info-block">
+
+                <div class="info-block-header">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    <span>Restricted Website</span>
+
+                </div>
+
+                <div class="website-badge-wrapper">
+
+                    <span id="blocked-website"
+                          class="blocked-website-domain">
+
+                        loading...
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- SCHEDULE SUB-CARD -->
+
+            <div class="info-block">
+
+                <div class="info-block-header">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <span>Active Focus Schedule</span>
+
+                </div>
+
+                <div class="schedule-grid">
+
+                    <div class="schedule-col">
+
+                        <span class="col-label">Start Time</span>
+
+                        <span id="blocked-start-time"
+                              class="col-value">--:--</span>
+
+                    </div>
+
+                    <div class="schedule-divider">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </div>
+
+                    <div class="schedule-col">
+
+                        <span class="col-label">End Time</span>
+
+                        <span id="blocked-end-time"
+                              class="col-value">--:--</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- STATUS BADGE -->
+
+            <div class="status-block">
+
+                <span class="status-label">Protection Status</span>
+
+                <div class="status-badge-container">
+
+                    <span id="blocked-status"
+                          class="blocked-status-pill">
+
+                        Blocking Active
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- PRIMARY ACTION BUTTON -->
+
+            <div class="action-block">
+
+                <button id="open-dashboard-btn"
+                        class="button button-primary button-large">
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                    <span>Open FocusShield Dashboard</span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
