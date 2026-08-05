@@ -80,16 +80,37 @@ FOCUSSHIELD/
 ## 🚀 Quick Start & Installation
 
 ### 1. Running the Web Application Locally
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/kirima-julius/focusshield.git
    cd focusshield
    ```
-2. Serve the directory using any static web server (e.g. VS Code Live Server or Python HTTP Server):
+
+2. Serve the directory using any static web server option below:
+
+   **NPM / Node.js Server Options (Recommended):**
+   ```bash
+   # Option 1: Using npx serve
+   npx serve .
+
+   # Option 2: Using npx http-server
+   npx http-server -p 8000
+
+   # Option 3: Using npx live-server
+   npx live-server
+   ```
+
+   **VS Code Extension Option:**
+   - Open the project in VS Code, right-click `index.html`, and select **Open with Live Server**.
+
+   **Python HTTP Server Option:**
    ```bash
    python3 -m http.server 8000
    ```
-3. Open `http://localhost:8000` in your web browser.
+   *(Note: We haven't looked at Python yet in class, but Python's built-in HTTP module works as a quick static web server if installed on your computer).*
+
+3. Open `http://localhost:8000` (or the port shown by your server) in your web browser.
 
 ---
 
@@ -110,9 +131,12 @@ FOCUSSHIELD/
 
 ## 🛠️ Technology Stack
 
-- **Frontend:** HTML5, Modern Vanilla CSS3 (Glassmorphism & CSS Variables), JavaScript (ES Modules).
-- **Backend & Database:** Firebase Authentication (Email/Password), Firebase Realtime Database.
-- **Browser Extension:** Chrome Extension Manifest V3 API (`declarativeNetRequest`, `tabs`, `webNavigation`, `alarms`, Service Workers).
+- **HTML5:** Semantic structure (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`), valid page hierarchy, and user input forms.
+- **CSS3:** Custom page styling, layout with Flexbox and CSS Grid, and responsive design for mobile, tablet, and desktop devices *(Note: advanced CSS frameworks were not looked at yet in class)*.
+- **JavaScript (JS):** DOM manipulation, event listeners, form validation, dynamic data rendering, and script modules.
+- **Local Storage (`localStorage`):** Client-side data storage and retrieval between pages *(Note: we haven't looked at complex database servers yet in class, so localStorage is used for client data persistence)*.
+- **Firebase:** User authentication (Email/Password) and Realtime Database for account login and live settings sync *(Note: custom backend server stacks were not looked at yet in class)*.
+- **Chrome Extension API:** Manifest V3 background service worker for automated browser website enforcement.
 
 ---
 
@@ -120,113 +144,21 @@ FOCUSSHIELD/
 
 The following features are planned for future releases of FocusShield:
 
-### 🔐 Authentication & Security
-- Google Sign-In
-- Microsoft Account Sign-In
-- Two-Factor Authentication (2FA)
-- Password reset via email
-- Device authorization and session management
+| 🔐 Authentication & Security | 📅 Advanced Scheduling | 🌐 Website Blocking |
+| :--- | :--- | :--- |
+| • Google Sign-In<br>• Microsoft Sign-In<br>• Two-Factor Auth (2FA)<br>• Password Reset via Email<br>• Device Session Management | • Multiple Focus Schedules<br>• Weekday vs Weekend Rules<br>• One-click Focus Mode<br>• Pomodoro Timer Sync<br>• Calendar Synchronization | • Custom Blacklist & Whitelist<br>• Category-based Blocking<br>• Wildcard Domain Support<br>• Keyword/URL Interception<br>• Admin Approval Override |
 
-### 📅 Advanced Scheduling
-- Multiple focus schedules per day
-- Different schedules for weekdays and weekends
-- One-click Focus Mode
-- Pomodoro timer integration
-- Calendar synchronization (Google Calendar, Outlook)
+| 📊 Analytics & Insights | 🤖 Smart Features | 🔔 Notifications |
+| :--- | :--- | :--- |
+| • Daily & Weekly Reports<br>• Time Saved Analytics<br>• Most Visited Blocked Sites<br>• Focus Score Trends<br>• Exportable PDF & CSV Reports | • AI Productivity Tips<br>• Habit-based Suggestions<br>• Smart Break Reminders<br>• Habit Tracking<br>• Productivity Achievements | • Desktop Push Alerts<br>• Focus Session Reminders<br>• Daily Progress Summaries<br>• Weekly Goal Alerts<br>• Milestone Badges |
 
-### 🌐 Website Blocking
-- Custom blacklist and whitelist
-- Category-based website blocking (Social Media, Gaming, Entertainment)
-- Wildcard domain support
-- Blocking by keywords and URLs
-- Temporary override with administrator approval
+| ☁️ Cloud & Synchronization | 👥 Team & Organization | 📱 Mobile & Integrations |
+| :--- | :--- | :--- |
+| • Cross-Device Sync<br>• Automated Cloud Backup<br>• Multi-Browser Support<br>• Offline Mode with Auto-Sync | • Family Account Sharing<br>• Team Admin Dashboard<br>• Workplace Portal<br>• Shared Focus Schedules | • Android & iOS Companion<br>• Push Notifications<br>• Slack & Discord Sync<br>• Notion, Todoist & Trello Sync |
 
-### 📊 Analytics & Insights
-- Daily, weekly, and monthly productivity reports
-- Time saved analytics
-- Most visited blocked websites
-- Focus score trends
-- Downloadable PDF and CSV reports
-
-### 🤖 Smart Features
-- AI-powered productivity recommendations
-- Automatic schedule suggestions based on browsing habits
-- Smart break reminders
-- Habit tracking
-- Productivity streak achievements
-
-### 🔔 Notifications
-- Desktop notifications
-- Focus session reminders
-- Daily productivity summaries
-- Weekly progress reports
-- Goal achievement alerts
-
-### ☁️ Cloud Synchronization
-- Cross-device synchronization
-- Automatic cloud backup
-- Multi-browser support
-- Offline mode with automatic sync
-
-### 👥 Team & Organization
-- Family accounts
-- Team productivity dashboard
-- School and workplace administrator portal
-- Shared focus schedules
-- Group productivity challenges
-
-### 📱 Mobile Companion
-- Android application
-- iOS application
-- Remote schedule management
-- Push notifications
-- Focus session control from mobile
-
-### 🔌 Integrations
-- Google Calendar
-- Microsoft Outlook
-- Notion
-- Trello
-- Slack
-- Discord
-- Todoist
-
-### 🎯 Gamification
-- Daily challenges
-- Achievement badges
-- Productivity levels
-- Reward system
-- Leaderboards
-
-### ⚙️ Customization
-- Light and Dark themes
-- Custom blocked page themes
-- Personalized dashboard widgets
-- Custom notification sounds
-- Multiple language support
-
-### 🛡️ Enterprise Features
-- Organization-wide policy management
-- Role-based administration
-- User management dashboard
-- Audit logs
-- Enterprise reporting
-- Active Directory integration
-
-### 📈 Performance Improvements
-- Faster startup time
-- Lower memory usage
-- Improved synchronization speed
-- Enhanced offline support
-- Optimized website detection engine
-
----
-
-## 🐛 Known Limitations & Testing Notes
-
-- **Offline Authentication:** Initial user login and registration require an active internet connection to communicate with Firebase Authentication; once authenticated, user session data and draft settings persist in browser `localStorage`.
-- **Browser Compatibility:** Chrome Extension blocking rules strictly enforce on Chromium-based browsers (Google Chrome, Brave, Microsoft Edge, Opera) via Manifest V3 Service Worker APIs.
-- **Database Indexing:** Large domain lists sync dynamically; ensure domain names are entered without `http://` or `www.` prefixes for optimal matching.
+| 🎯 Gamification & Customization | 🛡️ Enterprise & Performance |
+| :--- | :--- |
+| • Daily Challenges & Level Ups<br>• Productivity Leaderboards<br>• Custom Light/Dark Themes<br>• Custom Notification Sounds | • Organization Policy Management<br>• Role-based Access & Audit Logs<br>• Optimized Fast Detection Engine<br>• Lower Memory & CPU Footprint |
 
 ---
 
