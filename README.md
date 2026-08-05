@@ -1,4 +1,4 @@
-# FocusShield
+# <i class="fa-solid fa-shield-halved"></i> FocusShield
 
 > **Block Distractions. Stay Focused. Elevate Productivity.**
 
@@ -10,18 +10,18 @@ FocusShield is a full-stack, zero-mock distraction management platform paired wi
 
 ---
 
-## Key Features
+## <i class="fa-solid fa-star"></i> Key Features
 
-- **Realtime Firebase Authentication:** Secure account creation and login synced seamlessly across devices.
-- **Realtime Settings Synchronization:** Blocked website lists and focus schedules are stored in Firebase Realtime Database and synced live to the Chrome extension.
-- **Scheduled Focus Hours:** Set custom start and end times for blocking rules to automatically take effect.
-- **Automated Browser Enforcement:** Chrome Extension Manifest V3 background service worker monitors navigation and redirects blocked domain visits to a custom FocusShield blocking screen.
-- **Premium Dark Glassmorphic UI:** Styled with a modern dark slate palette, smooth gradients, glowing glassmorphic cards, and 100vh viewport section layouts.
-- **Ready-to-Deploy ZIP Packaging:** Direct in-app extension downloader for fast local developer and user deployment.
+- <i class="fa-solid fa-key"></i> **Realtime Firebase Authentication:** Secure account creation and login synced seamlessly across devices.
+- <i class="fa-solid fa-rotate"></i> **Realtime Settings Synchronization:** Blocked website lists and focus schedules are stored in Firebase Realtime Database and synced live to the Chrome extension.
+- <i class="fa-solid fa-clock"></i> **Scheduled Focus Hours:** Set custom start and end times for blocking rules to automatically take effect.
+- <i class="fa-solid fa-ban"></i> **Automated Browser Enforcement:** Chrome Extension Manifest V3 background service worker monitors navigation and redirects blocked domain visits to a custom FocusShield blocking screen.
+- <i class="fa-solid fa-palette"></i> **Premium Dark Glassmorphic UI:** Styled with a modern dark slate palette, smooth gradients, glowing glassmorphic cards, and 100vh viewport section layouts.
+- <i class="fa-solid fa-box-archive"></i> **Ready-to-Deploy ZIP Packaging:** Direct in-app extension downloader for fast local developer and user deployment.
 
 ---
 
-## Application Showcase & Screenshots
+## <i class="fa-solid fa-images"></i> Application Showcase & Screenshots
 
 ### 1. Real-time Chrome Extension Interception
 ![FocusShield Chrome Extension Interception Screen](screenshots/blocked_popup_screenshot.png)
@@ -34,7 +34,7 @@ FocusShield is a full-stack, zero-mock distraction management platform paired wi
 
 ---
 
-## Repository Architecture
+## <i class="fa-solid fa-folder-tree"></i> Repository Architecture
 
 ```text
 FOCUSSHIELD/
@@ -77,7 +77,7 @@ FOCUSSHIELD/
 
 ---
 
-## Quick Start & Installation
+## <i class="fa-solid fa-rocket"></i> Quick Start & Installation
 
 ### 1. Running the Web Application Locally
 
@@ -129,40 +129,40 @@ FOCUSSHIELD/
 
 ---
 
-## Technology Stack
+## <i class="fa-solid fa-layer-group"></i> Technology Stack
 
-- **HTML5:** Semantic structure (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`), valid page hierarchy, and user input forms.
-- **CSS3:** Custom page styling, layout with Flexbox and CSS Grid, and responsive design for mobile, tablet, and desktop devices *(Note: advanced CSS frameworks were not looked at yet in class)*.
-- **JavaScript (JS):** DOM manipulation, event listeners, form validation, dynamic data rendering, and script modules.
-- **Local Storage (`localStorage`):** Client-side data storage and retrieval between pages *(Note: we haven't looked at complex database servers yet in class, so localStorage is used for client data persistence)*.
-- **Firebase:** User authentication (Email/Password) and Realtime Database for account login and live settings sync *(Note: custom backend server stacks were not looked at yet in class)*.
-- **Chrome Extension API:** Manifest V3 background service worker for automated browser website enforcement.
+- <i class="fa-brands fa-html5"></i> **HTML5:** Semantic structure (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`), valid page hierarchy, and user input forms.
+- <i class="fa-brands fa-css3-alt"></i> **CSS3:** Custom page styling, layout with Flexbox and CSS Grid, and responsive design for mobile, tablet, and desktop devices *(Note: advanced CSS frameworks were not looked at yet in class)*.
+- <i class="fa-brands fa-js"></i> **JavaScript (JS):** DOM manipulation, event listeners, form validation, dynamic data rendering, and script modules.
+- <i class="fa-solid fa-database"></i> **Local Storage (`localStorage`):** Client-side data storage and retrieval between pages *(Note: we haven't looked at complex database servers yet in class, so localStorage is used for client data persistence)*.
+- <i class="fa-solid fa-fire"></i> **Firebase:** User authentication (Email/Password) and Realtime Database for account login and live settings sync *(Note: custom backend server stacks were not looked at yet in class)*.
+- <i class="fa-brands fa-chrome"></i> **Chrome Extension API:** Manifest V3 background service worker for automated browser website enforcement.
 
 ---
 
-## Future Features
+## <i class="fa-solid fa-compass"></i> Future Features
 
 The following features are planned for future releases of FocusShield:
 
-| Authentication & Security | Advanced Scheduling | Website Blocking |
+| <i class="fa-solid fa-lock"></i> Authentication & Security | <i class="fa-solid fa-calendar-days"></i> Advanced Scheduling | <i class="fa-solid fa-globe"></i> Website Blocking |
 | :--- | :--- | :--- |
 | • Google Sign-In<br>• Microsoft Sign-In<br>• Two-Factor Auth (2FA)<br>• Password Reset via Email<br>• Device Session Management | • Multiple Focus Schedules<br>• Weekday vs Weekend Rules<br>• One-click Focus Mode<br>• Pomodoro Timer Sync<br>• Calendar Synchronization | • Custom Blacklist & Whitelist<br>• Category-based Blocking<br>• Wildcard Domain Support<br>• Keyword/URL Interception<br>• Admin Approval Override |
 
-| Analytics & Insights | Smart Features | Notifications |
+| <i class="fa-solid fa-chart-column"></i> Analytics & Insights | <i class="fa-solid fa-robot"></i> Smart Features | <i class="fa-solid fa-bell"></i> Notifications |
 | :--- | :--- | :--- |
 | • Daily & Weekly Reports<br>• Time Saved Analytics<br>• Most Visited Blocked Sites<br>• Focus Score Trends<br>• Exportable PDF & CSV Reports | • AI Productivity Tips<br>• Habit-based Suggestions<br>• Smart Break Reminders<br>• Habit Tracking<br>• Productivity Achievements | • Desktop Push Alerts<br>• Focus Session Reminders<br>• Daily Progress Summaries<br>• Weekly Goal Alerts<br>• Milestone Badges |
 
-| Cloud & Synchronization | Team & Organization | Mobile & Integrations |
+| <i class="fa-solid fa-cloud"></i> Cloud & Synchronization | <i class="fa-solid fa-users"></i> Team & Organization | <i class="fa-solid fa-mobile-screen"></i> Mobile & Integrations |
 | :--- | :--- | :--- |
 | • Cross-Device Sync<br>• Automated Cloud Backup<br>• Multi-Browser Support<br>• Offline Mode with Auto-Sync | • Family Account Sharing<br>• Team Admin Dashboard<br>• Workplace Portal<br>• Shared Focus Schedules | • Android & iOS Companion<br>• Push Notifications<br>• Slack & Discord Sync<br>• Notion, Todoist & Trello Sync |
 
-| Gamification & Customization | Enterprise & Performance |
+| <i class="fa-solid fa-gamepad"></i> Gamification & Customization | <i class="fa-solid fa-shield-cat"></i> Enterprise & Performance |
 | :--- | :--- |
 | • Daily Challenges & Level Ups<br>• Productivity Leaderboards<br>• Custom Light/Dark Themes<br>• Custom Notification Sounds | • Organization Policy Management<br>• Role-based Access & Audit Logs<br>• Optimized Fast Detection Engine<br>• Lower Memory & CPU Footprint |
 
 ---
 
-## Author & Credits
+## <i class="fa-solid fa-user-pen"></i> Author & Credits
 
 Designed, architected, and engineered by **Julius Kirima**.
 
