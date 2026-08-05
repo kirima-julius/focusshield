@@ -222,6 +222,14 @@ The following features are planned for future releases of FocusShield:
 
 ---
 
+## 🐛 Known Limitations & Testing Notes
+
+- **Offline Authentication:** Initial user login and registration require an active internet connection to communicate with Firebase Authentication; once authenticated, user session data and draft settings persist in browser `localStorage`.
+- **Browser Compatibility:** Chrome Extension blocking rules strictly enforce on Chromium-based browsers (Google Chrome, Brave, Microsoft Edge, Opera) via Manifest V3 Service Worker APIs.
+- **Database Indexing:** Large domain lists sync dynamically; ensure domain names are entered without `http://` or `www.` prefixes for optimal matching.
+
+---
+
 ## ✍️ Author & Credits
 
 Designed, architected, and engineered by **Julius Kirima**.
