@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FocusShield Dashboard — Productive Time Analytics & Settings</title>
+
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+
+    <!-- FONTAWESOME ICONS -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="container header-container">
+
+            <a href="index.html" class="logo">
+
+                <img src="assets/icons/logo.png" alt="FocusShield Logo" class="logo-image">
+
+                <span class="logo-text">FocusShield</span>
+
+            </a>
+
+            <nav class="navigation">
+
+                <ul class="navigation-list">
+
+                    <li><a href="index.html" class="navigation-link">Home</a></li>
+
+                    <li><a href="about.html" class="navigation-link">About</a></li>
+
+                    <li><a href="index.html#features" class="navigation-link">Features</a></li>
+
+                    <li><a href="index.html#how-it-works" class="navigation-link">How it Works</a></li>
+
+                    <li><a href="index.html#pricing" class="navigation-link">Pricing</a></li>
+
+                    <li><a href="dashboard.html" class="navigation-link active">Dashboard</a></li>
+
+                </ul>
+
+            </nav>
+
+            <div class="header-actions">
+
+                <button id="logout-btn" class="button button-secondary" style="height:44px; padding:0 20px;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- DASHBOARD MAIN -->
+
+    <main class="dashboard">
+
+        <div class="container">
+
+            <!-- USER WELCOME ROW -->
+
+            <div class="dashboard-header">
+
+                <div class="dashboard-user-info">
+
+                    <h1>Welcome, <span id="username-display" class="gradient-text">User</span></h1>
+
+                    <p>Manage your focus hours, blocked websites, and analytics.</p>
+
+                </div>
+
+                <div class="sync-status-badge">
+
+                    <span class="live-dot"></span> <i class="fa-solid fa-wifi"></i> Firebase & Extension Connected
+
+                </div>
+
+            </div>
+
+            <!-- METRICS ROW -->
+
+            <div class="metrics-grid">
+
+                <!-- 1. CIRCULAR FOCUS SCORE GAUGE -->
+
+                <div class="metric-card">
+
+                    <div class="metric-label"><i class="fa-solid fa-chart-pie"></i> Focus Score</div>
+
+                    <div class="gauge-container" style="margin-top:10px;">
+
+                        <div class="circle-gauge">
+
+                            <svg viewBox="0 0 90 90">
+
+                                <circle class="gauge-bg" cx="45" cy="45" r="40"></circle>
+
+                                <circle id="gauge-progress-circle" class="gauge-progress" cx="45" cy="45" r="40" style="stroke-dashoffset: 251;"></circle>
+
+                            </svg>
+
+                            <div id="focus-score-value" class="gauge-center-text">--</div>
+
+                        </div>
+
+                        <div>
+
+                            <div id="focus-score-title" style="font-weight:700; font-size:16px; color:#FFF">Calculating...</div>
+
+                            <div id="focus-score-subtext" class="metric-subtext">No session completed</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- 2. BLOCKED ATTEMPTS -->
+
+                <div class="metric-card">
+
+                    <div class="metric-label"><i class="fa-solid fa-shield-cat"></i> Blocked Attempts Today</div>
+
+                    <div id="blocked-attempts-count" class="metric-value">0</div>
+
+                    <div id="blocked-attempts-subtext" class="metric-subtext">Distractions intercepted</div>
+
+                </div>
+
+                <!-- 3. HOURS RECOVERED -->
+
+                <div class="metric-card">
+
+                    <div class="metric-label"><i class="fa-solid fa-hourglass-half"></i> Hours Recovered</div>
+
+                    <div id="hours-saved-count" class="metric-value">0.0 hrs</div>
+
+                    <div id="hours-saved-subtext" class="metric-subtext">Time saved for deep work</div>
+
+                </div>
+
+                <!-- 4. ACTIVE SESSION TIMER -->
+
+                <div class="metric-card">
+
+                    <div class="metric-label"><i class="fa-solid fa-stopwatch"></i> Current Session</div>
+
+                    <div id="active-session-timer" class="metric-value" style="font-size:22px; color:var(--color-primary)">Inactive</div>
+
+                    <div id="active-session-subtext" class="metric-subtext">No active schedule</div>
+
+                </div>
+
+            </div>
+
+            <!-- MAIN GRID CONTENT -->
+
+            <div class="dashboard-main-grid">
+
+                <!-- LEFT COLUMN -->
+
+                <div>
+
+                    <!-- WEEKLY PRODUCTIVITY CHART CARD -->
+
+                    <div class="chart-card">
+
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+
+                            <h3><i class="fa-solid fa-chart-column"></i> Weekly Productivity Overview</h3>
+
+                            <span style="font-size:13px; color:var(--color-text-light)">Hours Saved / Day</span>
+
+                        </div>
+
+                        <div id="chart-bars-container" class="chart-bars">
+
+                            <div class="bar-col"><div class="bar-fill" style="height:0%;"></div><span class="bar-label">Mon</span></div>
+
+                            <div class="bar-col"><div class="bar-fill" style="height:0%;"></div><span class="bar-label">Tue</span></div>
+
+                            <div class="bar-col"><div class="bar-fill" style="height:0%;"></div><span class="bar-label">Wed</span></div>
+
+                            <div class="bar-col"><div class="bar-fill" style="height:0%;"></div><span class="bar-label">Thu</span></div>
+
+                            <div class="bar-col"><div class="bar-fill" style="height:0%;"></div><span class="bar-label">Fri</span></div>
+
+                            <div class="bar-col"><div class="bar-fill" style="height:0%;"></div><span class="bar-label">Sat</span></div>
+
+                            <div class="bar-col"><div class="bar-fill" style="height:0%;"></div><span class="bar-label">Sun</span></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BLOCKING SETTINGS & SCHEDULE -->
+
+                    <div class="glass-card" style="margin-bottom:30px;">
+
+                        <h3 style="margin-bottom:20px;"><i class="fa-solid fa-sliders"></i> Schedule & Status Settings</h3>
+
+                        <form id="settings-form" style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+
+                            <div style="grid-column: 1 / -1; display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); padding:16px; border-radius:12px;">
+
+                                <div>
+
+                                    <div style="font-weight:700; font-size:16px;">Automated Website Blocking</div>
+
+                                    <div style="font-size:13px; color:var(--color-text-light)">Status: <span id="blocking-status" class="status-disabled">Disabled</span></div>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input type="checkbox" id="blocking-toggle">
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label class="form-label">Start Time</label>
+
+                                <input type="time" id="start-time-input" class="form-input" value="09:00">
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label class="form-label">End Time</label>
+
+                                <input type="time" id="end-time-input" class="form-input" value="17:00">
+
+                            </div>
+
+                            <div style="grid-column: 1 / -1;">
+
+                                <button type="submit" id="save-settings-btn" class="button button-primary" style="width:100%;"><i class="fa-solid fa-floppy-disk"></i> Save Settings</button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <!-- BLOCKED WEBSITES LIST -->
+
+                    <div class="site-list-card">
+
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+
+                            <h3><i class="fa-solid fa-list-check"></i> Blocked Websites List</h3>
+
+                            <div style="display:flex; gap:8px;">
+
+                                <button id="export-json-btn" type="button" class="button button-secondary" style="height:36px; padding:0 12px; font-size:13px;"><i class="fa-solid fa-download"></i> Export JSON</button>
+
+                                <button id="import-json-btn" type="button" class="button button-secondary" style="height:36px; padding:0 12px; font-size:13px;"><i class="fa-solid fa-upload"></i> Import JSON</button>
+
+                                <input type="file" id="import-json-input" accept=".json" style="display:none;">
+
+                            </div>
+
+                        </div>
+
+                        <!-- SEARCH BAR -->
+
+                        <div style="margin-bottom:16px;">
+
+                            <input type="text" id="site-search-input" class="form-input" placeholder="Search blocked websites..." style="width:100%;">
+
+                        </div>
+
+                        <!-- ADD SITE FORM -->
+
+                        <form id="site-form" style="display:flex; gap:12px; margin-bottom:24px;">
+
+                            <input type="text" id="site-input" class="form-input" placeholder="e.g. instagram.com" required style="flex:1;">
+
+                            <button type="submit" id="add-site-btn" class="button button-primary" style="height:48px; padding:0 24px;"><i class="fa-solid fa-plus"></i> Add Site</button>
+
+                        </form>
+
+                        <div id="sites-list" class="sites-list">
+
+                            <!-- Dynamic Site Cards Rendered Here -->
+
+                        </div>
+
+                        <div id="empty-state" hidden style="text-align:center; padding:40px 20px; color:var(--color-text-muted);">
+
+                            <i class="fa-solid fa-shield" style="font-size:36px; margin-bottom:12px; opacity:0.5;"></i>
+
+                            <p>No blocked websites added yet. Add a domain above to begin blocking.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT COLUMN -->
+
+                <div>
+
+                    <!-- 30-DAY STREAK CALENDAR -->
+
+                    <div class="glass-card" style="margin-bottom:30px;">
+
+                        <h3><i class="fa-solid fa-calendar-check"></i> 30-Day Focus Streak</h3>
+
+                        <p id="streak-subtext" style="font-size:13px; margin-bottom:16px;">Complete focus sessions to build your streak.</p>
+
+                        <div id="streak-grid" class="streak-grid">
+
+                            <!-- Dynamic Days -->
+
+                        </div>
+
+                    </div>
+
+                    <!-- EXTENSION RELEASE & QUICK SETUP -->
+
+                    <div class="glass-card">
+
+                        <h3><i class="fa-solid fa-puzzle-piece"></i> Extension Status</h3>
+
+                        <p style="font-size:14px; margin-bottom:20px;">Download the FocusShield Chrome extension package to activate live browser enforcement.</p>
+
+                        <a href="downloads/FocusShield-Extension.zip" download="FocusShield-Extension.zip" class="button button-secondary" style="width:100%;"><i class="fa-solid fa-download"></i> Download Extension ZIP</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script type="module" src="js/dashboard.js"></script>
+
+</body>
+
+</html>
+
