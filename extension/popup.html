@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- META DATA -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- TITLE -->
+
+    <title>FocusShield</title>
+
+    <!-- FONTS & ICONS -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- STYLES -->
+
+    <link rel="stylesheet"
+          href="extension.css">
+
+    <!-- JAVASCRIPT (UNTOUCHED) -->
+
+    <script type="module"
+            src="popup.js"
+            defer></script>
+
+</head>
+
+<body>
+
+    <main class="extension-wrapper">
+
+        <!-- LOGIN VIEW -->
+
+        <section id="login-view"
+                 class="popup-container">
+
+            <div class="brand-hero">
+
+                <div class="logo-wrapper">
+
+                    <img src="icons/icon128.png"
+                         alt="FocusShield Logo"
+                         class="extension-logo">
+
+                </div>
+
+                <h1 class="extension-title">
+
+                    FocusShield
+
+                </h1>
+
+                <p class="extension-description">
+
+                    Sign in to synchronize your dashboard & focus shield.
+
+                </p>
+
+            </div>
+
+            <div class="extension-card login-card">
+
+                <form id="login-form"
+                      class="login-form">
+
+                    <div class="input-field">
+
+                        <label for="email"
+                               class="field-label">
+
+                            <i class="fa-solid fa-envelope"></i> Email
+
+                        </label>
+
+                        <input type="email"
+                               id="email"
+                               class="input"
+                               placeholder="name@company.com"
+                               required
+                               autocomplete="email">
+
+                    </div>
+
+                    <div class="input-field">
+
+                        <label for="password"
+                               class="field-label">
+
+                            <i class="fa-solid fa-lock"></i> Password
+
+                        </label>
+
+                        <input type="password"
+                               id="password"
+                               class="input"
+                               placeholder="••••••••"
+                               required
+                               autocomplete="current-password">
+
+                    </div>
+
+                    <button type="submit"
+                            id="login-btn"
+                            class="button button-primary">
+
+                        <span>Sign In</span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+                <p id="login-message"
+                   class="message">
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- DASHBOARD / CONTROL PANEL VIEW -->
+
+        <section id="dashboard-view"
+                 class="popup-container"
+                 hidden>
+
+            <!-- APP HEADER -->
+
+            <header class="app-header">
+
+                <div class="header-brand">
+
+                    <img src="icons/icon128.png"
+                         alt="FocusShield Logo"
+                         class="header-logo">
+
+                    <div class="header-info">
+
+                        <h1 class="header-title">
+
+                            FocusShield
+
+                        </h1>
+
+                        <span class="header-subtitle">
+
+                            Desktop Control
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- STATUS CARD -->
+
+            <div class="extension-card status-card">
+
+                <div class="status-content">
+
+                    <div class="status-icon-wrapper">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <div class="status-details">
+
+                        <span class="card-label">
+
+                            Protection Status
+
+                        </span>
+
+                        <div class="status-badge-wrapper">
+
+                            <span id="extension-status"
+                                  class="status-badge checking">
+
+                                Checking...
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- GRID METRICS (SCHEDULE & BLOCKED SITES) -->
+
+            <div class="metrics-grid">
+
+                <!-- SCHEDULE CARD -->
+
+                <div class="extension-card metric-card">
+
+                    <div class="card-header-sm">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <span class="card-header-title">Schedule</span>
+
+                    </div>
+
+                    <div class="schedule-times">
+
+                        <div class="time-col">
+
+                            <span class="time-label">Start</span>
+
+                            <span id="schedule-start"
+                                  class="time-val">--:--</span>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right time-arrow"></i>
+
+                        <div class="time-col">
+
+                            <span class="time-label">End</span>
+
+                            <span id="schedule-end"
+                                  class="time-val">--:--</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- BLOCKED SITES CARD -->
+
+                <div class="extension-card metric-card">
+
+                    <div class="card-header-sm">
+
+                        <i class="fa-solid fa-ban"></i>
+
+                        <span class="card-header-title">Blocked Sites</span>
+
+                    </div>
+
+                    <div class="metric-stat">
+
+                        <span id="blocked-sites-count"
+                              class="stat-number">0 Sites</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- QUICK ACTIONS CARD -->
+
+            <div class="extension-card actions-card">
+
+                <button id="open-dashboard-btn"
+                        class="button button-primary">
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                    <span>Open Dashboard</span>
+
+                </button>
+
+                <button id="logout-btn"
+                        class="button button-secondary">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
