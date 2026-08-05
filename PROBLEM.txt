@@ -1,0 +1,7 @@
+Problem statement 
+
+Excessive use of social media can reduce productivity, affect concentration, and make it difficult for users to stay focused on important tasks. Many users struggle to limit access to distracting websites during work or study hours.
+
+##Project description  - How will focusshield project solve the problem above?
+
+FocusShield is a responsive web application with a companion Chrome extension that allows users to configure websites they want to block and define the times during which those websites should be inaccessible. The website provides a simple dashboard where users can manage blocked websites and schedules. The Chrome extension reads these settings and redirects users away from blocked websites during the configured time period, helping them stay focused and reduce distractions.
