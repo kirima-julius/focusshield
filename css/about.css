@@ -1,0 +1,101 @@
+/* ABOUT PAGE */
+
+.about-section {
+
+    padding: 30px 0px;
+
+}
+
+
+.about-section:last-child {
+
+    margin-bottom: 0px;
+
+}
+
+
+/* PAGE HERO */
+
+.page-hero {
+
+    text-align: center;
+
+}
+
+
+.page-hero .page-title {
+
+    margin-bottom: 20px;
+
+}
+
+
+.page-hero .page-description {
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+}
+
+
+/* CONTENT */
+
+.about-section .container {
+
+    max-width: 900px;
+
+}
+
+
+.about-section .section-title {
+
+    color: var(--color-primary);
+
+}
+
+
+.about-section .section-description {
+
+    line-height: 30px;
+
+}
+
+
+/* TECHNOLOGIES */
+
+.tech-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.tech-card {
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-medium);
+
+    padding: 25px;
+
+    box-shadow: var(--shadow-small);
+
+    transition: var(--transition);
+
+}
+
+
+.tech-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-medium);
+
+}
